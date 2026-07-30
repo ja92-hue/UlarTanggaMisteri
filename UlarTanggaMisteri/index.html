@@ -118,14 +118,14 @@
 
     <!-- LOGIKA MENU -->
     <script>
-        const FILE_MUSIK_KAMU = 'audio/Pirates.mp3'; 
+        const FILE_MUSIK = 'Pirates.mp3'; 
         
         const MenuSound = {
             bgm: null,
             init: function() {
                 let isBgmOn = localStorage.getItem('utm_bgm') !== 'false';
                 if (isBgmOn && !this.bgm) {
-                    this.bgm = new Audio(FILE_MUSIK_KAMU);
+                    this.bgm = new Audio(FILE_MUSIK);
                     this.bgm.loop = true; 
                     this.bgm.volume = 0.3; 
                     this.bgm.play().catch(e => console.log("Menunggu klik dari user..."));
@@ -157,10 +157,10 @@
         
         function updateSettingsUI() {
             const btnBGM = document.getElementById('btn-bgm'); const btnSFX = document.getElementById('btn-sfx');
-            if (bgmOn) { btnBGM.className = 'player-type-btn human-color'; btnBGM.innerText = 'NYALA ✅'; } 
-            else { btnBGM.className = 'player-type-btn bot-color'; btnBGM.innerText = 'MATI ❌'; }
-            if (sfxOn) { btnSFX.className = 'player-type-btn human-color'; btnSFX.innerText = 'NYALA ✅'; } 
-            else { btnSFX.className = 'player-type-btn bot-color'; btnSFX.innerText = 'MATI ❌'; }
+            if (bgmOn) { btnBGM.className = 'player-type-btn human-color'; btnBGM.innerText = 'NYALA'; } 
+            else { btnBGM.className = 'player-type-btn bot-color'; btnBGM.innerText = 'MATI'; }
+            if (sfxOn) { btnSFX.className = 'player-type-btn human-color'; btnSFX.innerText = 'NYALA'; } 
+            else { btnSFX.className = 'player-type-btn bot-color'; btnSFX.innerText = 'MATI'; }
         }
 
         let playerCount = 4;
