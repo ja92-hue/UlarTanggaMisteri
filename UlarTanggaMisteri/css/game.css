@@ -1,0 +1,194 @@
+/* =========================================
+   RESET & DASAR
+   ========================================= */
+:root {
+    --wood-light: #fbe9d0;
+    --wood-base: #e6c594;
+    --wood-dark: #8b5a2b;
+    --wood-border: #5c3a21;
+    --text-dark: #3e2723;
+    --bg-page: #121212;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+
+body, html { 
+    width: 100%; height: 100%; 
+    overflow: hidden; 
+    font-family: 'Nunito', sans-serif; 
+    background-color: var(--bg-page); 
+    display: flex; justify-content: center; align-items: center; 
+}
+
+h1, h2, h3, .main-title, .subtitle { font-family: 'Lilita One', cursive; }
+
+/* CONTAINER DESKTOP JUMBO */
+.app-container {
+    width: 98vw; 
+    max-width: 1300px; 
+    height: 94vh; 
+    background-color: var(--wood-light);
+    border: 8px solid var(--wood-border); 
+    border-radius: 20px; 
+    position: relative; 
+    overflow: hidden; 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+    display: flex; flex-direction: column;
+}
+
+/* =========================================
+   HALAMAN MENU UTAMA
+   ========================================= */
+.menu-app {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background-image: url('../Background.jpeg'); 
+    background-size: cover; 
+    background-position: center;
+    background-color: var(--wood-base);
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.2); 
+}
+
+.title-container-custom { text-align: center; margin-bottom: 1vh; display: flex; flex-direction: column; align-items: center;}
+.title-ular { font-size: clamp(2.5rem, 6vh, 4.5rem); color: #7cb342; -webkit-text-stroke: 2px #3e200c; text-shadow: 0 4px 0 #3e200c; line-height: 0.8; z-index: 2; position: relative; letter-spacing: 2px;}
+.title-tangga { font-size: clamp(2.2rem, 5.5vh, 3.8rem); color: #ffb300; -webkit-text-stroke: 2px #3e200c; text-shadow: 0 4px 0 #3e200c; line-height: 0.8; margin-top: -4px; z-index: 1; position: relative; letter-spacing: 1px;}
+.title-misteri-box { display: flex; align-items: center; gap: 10px; margin-top: 10px;}
+.dice-decor { font-size: clamp(1.2rem, 3vh, 2rem); filter: drop-shadow(0 3px 0 #3e200c); }
+.text-misteri { background: #d8c4a0; color: #3e200c; border: 3px solid #3e200c; border-radius: 10px; padding: 2px 20px; font-size: clamp(1rem, 2.5vh, 1.4rem); box-shadow: 0 3px 0 #3e200c; letter-spacing: 2px;}
+
+.tagline-box { background: rgba(93, 64, 55, 0.9); border: 2px solid #3e200c; border-radius: 10px; color: #e7e0d5; padding: 6px 15px; font-size: clamp(0.8rem, 1.8vh, 1rem); font-weight: bold; text-align: center; max-width: 380px; margin: 1.5vh auto; box-shadow: 0 4px 0 rgba(0,0,0,0.4);}
+
+.menu-buttons-custom { display: flex; flex-direction: column; gap: 1vh; width: 100%; max-width: 320px;}
+.menu-btn { background-color: #bfa57d; border: 3px solid #3e200c; border-radius: 12px; padding: 3px; box-shadow: 0 4px 0 #3e200c; width: 100%; cursor: pointer; transition: transform 0.1s;}
+.menu-btn:active { transform: translateY(4px); box-shadow: 0 0px 0 #3e200c;}
+.menu-btn .btn-inner { border: 2px solid #3e200c; border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; padding: 5px; height: clamp(40px, 6vh, 50px); }
+.btn-green .btn-inner { background-color: #a3b156; } .btn-orange .btn-inner { background-color: #d1945a; } .btn-blue .btn-inner { background-color: #7d9ba6; } .btn-tan .btn-inner { background-color: #dfba86; }
+.icon-box-menu { background: #ded1c1; border: 2px solid #3e200c; border-radius: 6px; width: clamp(30px, 4.5vh, 38px); height: clamp(30px, 4.5vh, 38px); display: flex; align-items: center; justify-content: center; font-size: clamp(1rem, 2.2vh, 1.4rem); position: absolute; left: 8px; }
+.menu-btn .text { font-family: 'Lilita One', cursive; font-size: clamp(1rem, 2.5vh, 1.4rem); color: #2c1a0e; letter-spacing: 1px;}
+
+.bottom-btns { display: flex; justify-content: center; gap: 15px; margin-top: 2vh;}
+.btm-btn { background-color: #bfa57d; border: 2px solid #3e200c; border-radius: 10px; padding: 3px; width: clamp(60px, 9vh, 75px); height: clamp(60px, 9vh, 75px); box-shadow: 0 4px 0 #3e200c; cursor: pointer;}
+.btm-btn:active { transform: translateY(4px); box-shadow: 0 0 0 #3e200c; }
+.btm-btn .btn-inner { background-color: #dfba86; border: 2px solid #3e200c; border-radius: 6px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;}
+.btm-btn .icon { font-size: clamp(1.2rem, 2.2vh, 1.6rem); }
+.btm-btn .text { font-family: 'Nunito', sans-serif; font-size: 0.5rem; font-weight: 900; color: #3e200c; text-align: center;}
+
+
+/* =========================================
+   ARENA BERMAIN (3 KOLOM)
+   ========================================= */
+.game-container {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr) 340px; 
+    grid-template-rows: 60px minmax(0, 1fr) auto;
+    height: 100%; width: 100%; background-color: var(--wood-base);
+}
+
+.game-header { grid-column: 1 / 4; grid-row: 1; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; background: rgba(255,255,255,0.4); border-bottom: 5px solid var(--wood-border);}
+.game-title { font-size: 1.5rem; color: var(--text-dark);}
+.game-title .misteri { background: var(--wood-border); color: white; padding: 4px 15px; border-radius: 12px; font-size: 1rem;}
+.icon-btn { background: #fff; border: 3px solid var(--wood-border); border-radius: 10px; padding: 4px 12px; font-size: 1.2rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; box-shadow: 0 3px 0 var(--wood-border);}
+.icon-btn:active { transform: translateY(3px); box-shadow: none;}
+.icon-btn span { font-size: 0.6rem; font-weight: 900; color: var(--text-dark);}
+
+.player-stats { grid-column: 1; grid-row: 2 / 4; display: flex; flex-direction: column; gap: 8px; padding: 12px 15px; background: rgba(0,0,0,0.05); border-right: 5px solid var(--wood-border); overflow-y: auto; }
+.player-card { flex: 1; min-height: 0; justify-content: center; background: rgba(255,255,255,0.7); border: 3px solid rgba(0,0,0,0.15); border-radius: 12px; padding: 5px 8px; display: flex; flex-direction: column; align-items: center; text-align: center; transition: 0.2s;}
+.player-card.active { background: #fff; border-color: #27ae60; box-shadow: 0 4px 0 #27ae60; z-index: 2; transform: scale(1.03); }
+.player-card .avatar { font-size: 2rem; margin-bottom: 2px;}
+.player-card .name { font-size: 0.8rem; font-weight: 900; color: var(--text-dark); white-space: nowrap;}
+.player-card .pos { font-size: 0.85rem; font-weight: 900; color: #d35400;}
+.status-icons { display: flex; gap: 2px; font-size: 0.8rem; min-height: 15px; margin-top: 2px;}
+
+.board-wrapper { grid-column: 2; grid-row: 2 / 4; min-height: 0; min-width: 0; padding: 25px; display: flex; justify-content: center; align-items: center; position: relative;}
+canvas#gameCanvas { max-width: 100%; max-height: 100%; height: 100%; aspect-ratio: 1 / 1; background-color: #fffae6; border: 8px solid var(--wood-border); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); object-fit: contain; }
+
+.powerups-section { grid-column: 3; grid-row: 2; display: flex; flex-direction: column; padding: 20px; background: rgba(255,255,255,0.2); border-left: 5px solid var(--wood-border); border-bottom: 5px solid var(--wood-border); min-height: 0; overflow: hidden;}
+.section-title { text-align: center; font-family: 'Lilita One', cursive; background: #deb887; border: 3px solid var(--wood-border); display: inline-block; padding: 4px 15px; margin: 0 auto 15px; border-radius: 8px; font-size: 1rem; color: var(--text-dark);}
+.cards-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; overflow-y: auto; height: 100%; padding-bottom: 10px; align-content: start;}
+.cards-list::-webkit-scrollbar { width: 6px; }
+.cards-list::-webkit-scrollbar-thumb { background-color: var(--wood-border); border-radius: 10px; }
+.empty-cards { grid-column: 1 / 3; text-align: center; color: #8d6e63; font-style: italic; font-size: 1rem; margin-top: 15px;}
+.mistery-card { width: 100%; background: #fff; border: 3px solid var(--wood-border); border-radius: 10px; display: flex; flex-direction: column; align-items: center; padding: 10px; text-align: center; font-size: 0.75rem; font-weight: 900; cursor: pointer; box-shadow: 0 4px 0 var(--wood-border); color: var(--text-dark); transition: 0.1s;}
+.mistery-card:active { transform: translateY(4px); box-shadow: none;}
+.mistery-card .icon { font-size: 2.2rem; margin: 4px 0;}
+.mistery-card.good { background: #e8f5e9; border-color: #2e7d32; box-shadow: 0 4px 0 #2e7d32;}
+.mistery-card.bad { background: #ffebee; border-color: #c62828; box-shadow: 0 4px 0 #c62828;}
+
+.control-panel { grid-column: 3; grid-row: 3; display: flex; justify-content: space-around; align-items: center; padding: 20px 10px; background: rgba(0,0,0,0.1); border-left: 5px solid var(--wood-border); }
+.turn-info { display: flex; flex-direction: column; align-items: center; font-weight: 900; font-size: 1rem; color: var(--text-dark);}
+.turn-avatar { font-size: 2.8rem; margin: 5px 0; filter: drop-shadow(0 3px 2px rgba(0,0,0,0.3)); animation: bounceAvatar 0.6s infinite alternate ease-in-out;}
+@keyframes bounceAvatar { from { transform: translateY(0); } to { transform: translateY(-5px) scale(1.05); } }
+
+.dice-container { display: flex; flex-direction: column; align-items: center; cursor: pointer; background: #ffca28; padding: 10px 30px; border-radius: 15px; border: 4px solid #ff8f00; box-shadow: 0 5px 0 #ff8f00; transition: 0.1s;}
+.dice-container:active { transform: translateY(5px); box-shadow: 0 0 0 #ff8f00;}
+.dice { font-size: 3rem; line-height: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);}
+.dice-hint { font-size: 0.75rem; font-weight: bold; color: #b00020; margin-top: 4px;}
+
+/* =========================================
+   TOAST & OVERLAY EFEK
+   ========================================= */
+#toast-container { position: absolute; top: 80px; left: 50%; transform: translateX(-50%); width: auto; min-width: 300px; z-index: 100; display: flex; flex-direction: column; gap: 8px; pointer-events: none;}
+.toast { background: rgba(0,0,0,0.85); color: white; padding: 12px 20px; border-radius: 10px; font-size: 1rem; font-weight: bold; text-align: center; animation: fadeinout 3.5s forwards; border: 2px solid rgba(255,255,255,0.2); box-shadow: 0 5px 15px rgba(0,0,0,0.5);}
+@keyframes fadeinout { 0% { opacity: 0; transform: translateY(-20px); } 10% { opacity: 1; transform: translateY(0); } 90% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-20px); } }
+
+#effect-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10; display: none; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.6); border-radius: 15px;}
+#effect-overlay.active { display: flex; }
+.anim-popup { animation: cardPop 1.5s ease-out forwards; text-align: center; filter: drop-shadow(0 15px 15px rgba(0,0,0,0.7));}
+@keyframes cardPop { 0% { transform: scale(0.2) translateY(50px); opacity: 0; } 20% { transform: scale(1.1) translateY(-10px); opacity: 1; } 40% { transform: scale(1) translateY(0); opacity: 1; } 80% { transform: scale(1) translateY(0); opacity: 1; } 100% { transform: scale(1.4); opacity: 0; }}
+.anim-shake { animation: shake 0.4s ease-in-out infinite; }
+.anim-flash { animation: flash 0.2s ease-in-out infinite alternate; }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-8px) rotate(-1deg); } 75% { transform: translateX(8px) rotate(1deg); } }
+@keyframes flash { 0% { opacity: 1; filter: brightness(1); } 100% { opacity: 0.8; filter: brightness(2) contrast(1.5); background-color: rgba(255,255,255,0.5); } }
+
+/* =========================================
+   MODAL LOBBY SETUP & GALLERY KARTU
+   ========================================= */
+.modal-overlay { 
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.8); z-index: 1000; 
+    display: flex; justify-content: center; align-items: center; padding: 20px;
+}
+.modal-box { 
+    background: var(--wood-light); border: 8px solid var(--wood-border); border-radius: 20px; 
+    padding: 25px; width: 100%; max-width: 450px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8); 
+    display: flex; flex-direction: column; gap: 15px; 
+}
+.modal-box h2 { text-align: center; color: var(--text-dark); font-size: 2rem; -webkit-text-stroke: 1.5px white; margin-bottom: 5px;}
+.player-count-selector { display: flex; justify-content: center; align-items: center; gap: 10px; background: rgba(0,0,0,0.1); padding: 10px; border-radius: 12px;}
+.player-count-selector span { font-weight: 900; color: var(--text-dark); font-size: 1.2rem;}
+.pc-btn { background: #fff; border: 3px solid var(--wood-border); border-radius: 8px; font-family: 'Lilita One'; font-size: 1.5rem; padding: 5px 15px; cursor: pointer; color: var(--text-dark); transition: 0.1s;}
+.pc-btn.active { background: #f39c12; color: #fff; border-color: #b9770e; transform: scale(1.1); box-shadow: 0 4px 0 #b9770e;}
+#player-config-list { display: flex; flex-direction: column; gap: 10px;}
+.player-row { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.7); padding: 10px 15px; border-radius: 12px; border: 3px solid var(--wood-border);}
+.pr-info { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 1.2rem; color: var(--text-dark);}
+.pr-avatar { font-size: 2rem; }
+.player-type-btn { padding: 8px 15px; font-family: 'Lilita One'; font-size: 1.1rem; border-radius: 8px; cursor: pointer; border: 3px solid var(--wood-border); box-shadow: 0 4px 0 var(--wood-border); transition: 0.1s;}
+.player-type-btn:active { transform: translateY(4px); box-shadow: 0 0 0 var(--wood-border); }
+.human-color { background: #3498db; color: white; }
+.bot-color { background: #e74c3c; color: white; }
+.modal-actions { display: flex; gap: 10px; margin-top: 10px;}
+.modal-actions button { flex: 1; }
+
+/* KELAS TAMBAHAN KHUSUS MODAL GALLERY KARTU */
+.modal-large { max-width: 650px; max-height: 90vh; }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+    overflow-y: auto;
+    padding: 10px 5px;
+    max-height: 60vh;
+}
+.gallery-grid::-webkit-scrollbar { width: 8px; }
+.gallery-grid::-webkit-scrollbar-thumb { background-color: var(--wood-border); border-radius: 10px; }
+
+.gallery-card {
+    background: #fff; border: 3px solid var(--wood-border); border-radius: 12px;
+    padding: 10px 5px; display: flex; flex-direction: column; align-items: center;
+    text-align: center; box-shadow: 0 4px 0 var(--wood-border);
+}
+.gallery-card .icon { font-size: 2.8rem; margin-bottom: 5px; }
+.gallery-card .name { font-family: 'Lilita One', cursive; font-size: 0.9rem; color: var(--text-dark); margin-bottom: 3px; line-height: 1.1; }
+.gallery-card .desc { font-family: 'Nunito', sans-serif; font-size: 0.7rem; font-weight: 900; color: #555; }
+.gallery-card.good { background: #e8f5e9; border-color: #2e7d32; box-shadow: 0 4px 0 #2e7d32; }
+.gallery-card.bad { background: #ffebee; border-color: #c62828; box-shadow: 0 4px 0 #c62828; }
