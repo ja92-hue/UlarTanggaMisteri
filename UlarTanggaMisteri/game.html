@@ -2,7 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Kode pemaksa tampilan Desktop di HP -->
+    <meta name="viewport" content="width=1200">
     <title>Ular Tangga Misteri - Main</title>
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/game.css">
@@ -13,11 +14,10 @@
         <div id="toast-container"></div>
 
         <header class="game-header">
-            <button class="icon-btn" onclick="window.location.href='index.html'">🏠<br><span>MENU</span></button>
+            <button class="icon-btn" onclick="window.location.href='index.html'">⬅️<br><span>MENU</span></button>
             <h2 class="game-title">ULAR TANGGA <span class="misteri">MISTERI</span></h2>
             
             <div style="display: flex; gap: 8px;">
-                <!-- Tombol Musik Dikembalikan! -->
                 <button class="icon-btn" onclick="toggleIngameBGM()" id="btn-toggle-bgm">🎵<br><span>MUSIK</span></button>
                 <button class="icon-btn" onclick="openInfo()">📖<br><span>INFO</span></button>
             </div>
